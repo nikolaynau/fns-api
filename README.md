@@ -15,7 +15,10 @@ npm install fns-api axios
 import axios from 'axios';
 import * as fns from 'fns-api';
 
-const axiosInstance = axios.create({ baseURL: fns.BASE_URL });
+const axiosInstance = axios.create({
+  baseURL: fns.BASE_URL,
+  headers: fns.defaultHeaders
+});
 const loginApi = new fns.LoginApi(axiosInstance);
 
 loginApi

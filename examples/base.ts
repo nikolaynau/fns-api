@@ -1,7 +1,10 @@
 import axios from 'axios';
 import * as fns from '..';
 
-const axiosInstance = axios.create({ baseURL: fns.BASE_URL });
+const axiosInstance = axios.create({
+  baseURL: fns.BASE_URL,
+  headers: fns.defaultHeaders
+});
 const loginApi = new fns.LoginApi(axiosInstance);
 
 loginApi

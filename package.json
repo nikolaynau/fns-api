@@ -10,11 +10,14 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "rimraf dist",
+    "prebuild": "npm run del",
     "build": "tsc",
+    "prewatch": "npm run del",
+    "watch": "tsc --watch",
+    "del": "rimraf dist",
     "format": "prettier --write \"{lib,tests}/**/*.ts\"",
     "lint": "eslint \"{lib,tests}/**/*.ts\" --fix",
-    "test": "jest",
+    "test:e2e": "jest --config ./tests/jest-e2e.json",
     "postversion": "npm run push",
     "push": "git push origin master --tags"
   },
