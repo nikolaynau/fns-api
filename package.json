@@ -18,7 +18,7 @@
     "postversion": "npm run push",
     "push": "git push origin master --tags"
   },
-  "dependencies": {
+  "peerDependencies": {
     "axios": "^0.26.0"
   },
   "devDependencies": {
