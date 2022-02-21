@@ -1,13 +1,13 @@
 # Login API Specification
 
-- [A-1. Get external Esia url for OAuth2](#a-1-get-external-esia-url-for-oauth2)
+- [A-1. Get Esia url for OAuth2](#a-1-get-esia-url-for-oauth2)
 - [A-2. Login via Esia](#a-2-login-via-esia)
 - [A-3. Login via LK FL](#a-3-login-via-lk-fl)
 - [A-4. Send request login by phone](#a-4-send-request-login-by-phone)
 - [A-5. Login by phone](#a-5-login-by-phone)
 
 
-## **A-1. Get external Esia url for OAuth2**
+## **A-1. Get Esia url for OAuth2**
 
 `GET v2/mobile/users/esia/auth/url`
 
