@@ -13,7 +13,7 @@ Authorization is not required.
 
 **No**
 
-#### Successful Response (Code: **200 OK**)
+#### Successful Response (Code: `200 OK`)
 
 Req | Name | Type | Description
 --- | ---- | ---- | -----------
@@ -38,7 +38,7 @@ Req | Name | Belong | Type | Description
 ----| ---- | ------ | ---- | -----------
 \* | EsiaLoginRequest | Body | [EsiaLoginRequest](./data-model.md#EsiaLoginRequest) | Request data
 
-#### Successful Response (Code: **200 OK**)
+#### Successful Response (Code: `200 OK`)
 
 Req | Name | Type | Description
 --- | ---- | ---- | -----------
