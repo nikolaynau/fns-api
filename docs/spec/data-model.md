@@ -24,6 +24,31 @@ Req | Name | Type | Description
 \*  | state | string | 
 \*  | client_secret | string | 
 
+## FLLoginRequest
+
+Req | Name | Type | Description
+--- | ---- | ---- | -----------
+\*  | inn | string | 
+\*  | password | string | 
+\*  | client_secret | string | 
+
+## PhoneLoginRequest
+
+Req | Name | Type | Description
+--- | ---- | ---- | -----------
+\*  | phone | string | 
+\*  | captcha | string | 
+\*  | os | string | Default value: `android`
+\*  | client_secret | string | 
+
+## PhoneVerifyRequest
+
+Req | Name | Type | Description
+--- | ---- | ---- | -----------
+\*  | phone | string | 
+\*  | code | string | 
+\*  | client_secret | string | 
+
 ## LoginResponse
 
 Req | Name | Type | Description
