@@ -10,7 +10,7 @@ Value | Type | Description
   3   | int  | Expense
   4   | int  | Return expense
 
-## GetUrlOAuthEsiaResponse
+## EsiaUrlResponse
 
 Req | Name | Type | Description
 --- | ---- | ---- | -----------

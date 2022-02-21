@@ -1,6 +1,6 @@
 import type { AxiosInstance, AxiosResponse, CancelToken } from 'axios';
 import type {
-  GetUrlOAuthEsiaResponse,
+  EsiaUrlResponse,
   LoginApiInterface
 } from './interfaces/login-api.interface';
 
@@ -9,7 +9,7 @@ export class LoginApi implements LoginApiInterface {
 
   getUrlOAuthEsia(
     cancelToken?: CancelToken
-  ): Promise<AxiosResponse<GetUrlOAuthEsiaResponse>> {
+  ): Promise<AxiosResponse<EsiaUrlResponse>> {
     return this.axiosInstance.get('v2/mobile/users/esia/auth/url', {
       cancelToken
     });

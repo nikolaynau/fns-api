@@ -17,7 +17,7 @@ Authorization is not required.
 
 Req | Name | Type | Description
 --- | ---- | ---- | -----------
-\*  | GetUrlOAuthEsiaResponse | [GetUrlOAuthEsiaResponse](./data-model.md#GetUrlOAuthEsiaResponse) | Response data containing url
+\*  | EsiaUrlResponse | [EsiaUrlResponse](./data-model.md#EsiaUrlResponse) | Response data containing url
 
 #### **Errors**
 
