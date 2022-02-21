@@ -99,7 +99,7 @@ Req | Name | Belong | Type | Description
 
 #### Successful Response (Code: `200 OK`)
 
-**No**
+An SMS with a verification code has been sent to the specified phone number.
 
 #### **Errors**
 
