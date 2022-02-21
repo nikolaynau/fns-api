@@ -26,8 +26,8 @@ If the response code is an error, then the server returns the message as a regul
 ## Additional Headers (optional)
 
 `Device-OS: Android`    
-`Device-Id: 7C82010F-16CC-446B-8F66-FC4080C66521`   
-`ClientVersion: 2.11.1` 
+`Device-Id: 7C82010F-16CC-446B-8F66-FC4080C66521`     
+`ClientVersion: 2.11.1`   
 `Accept-Language: ru-RU;q=1, en-US;q=0.9` 
 
 ## Authorization
