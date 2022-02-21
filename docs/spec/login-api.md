@@ -1,9 +1,9 @@
 # Login API Specification
 
 - [General information](./general-spec.md)
-- [A-1. Get external OAuth2 url for esia](#a-1-get-external-oauth2-url-for-esia)
+- [A-1. Get external OAuth2 url for Esia](#a-1-get-external-oauth2-url-for-esia)
 
-## **A-1. Get external OAuth2 url for esia**
+## **A-1. Get external OAuth2 url for Esia**
 
 `GET v2/mobile/users/esia/auth/url`
 
