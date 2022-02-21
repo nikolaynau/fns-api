@@ -8,7 +8,7 @@ where:
 
 `t` - Date from receipt.  
 `s` - Total amount of the receipt.  
-`fn` - FN number (Fiscal Number) 16-digit. E.g. 8710000100518392. 
-`i` - FD number (Fiscal Document) up to 10 digits. E.g. 54812.  
+`fn` - FN number (Fiscal Number) 16-digit. E.g. 8710000100518392.   
+`i` - FD number (Fiscal Document) up to 10 digits. E.g. 54812.    
 `fp` - FP number (Fiscal Sign of the Document) up to 10 digits. E.g. 3522207165.  
 `n` - Operation type (sale, purchase, etc.). See [OperationType](./data-model.md#OperationType).  
