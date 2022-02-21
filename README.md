@@ -27,6 +27,10 @@ loginApi
   .catch((e) => console.error(e));
 ```
 
+## API Specification
+
+Read [API specification](./docs/spec/README.md) for full information.
+
 ## License
 
 Licensed under the [MIT License](./LICENSE).
