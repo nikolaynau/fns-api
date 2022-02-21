@@ -9,17 +9,17 @@
 
 Authorization is not required.
 
-### Request Parameters
+#### **Request Parameters**
 
 **No**
 
-### Successful Response (Code: `200 OK`)
+#### Successful Response (Code: **200 OK**)
 
 Req | Name | Type | Description
 --- | ---- | ---- | -----------
 \*  | GetUrlOAuthEsiaResponse | [GetUrlOAuthEsiaResponse](./data-model.md#GetUrlOAuthEsiaResponse) | Response data containing url
 
-### Errors
+#### **Errors**
 
 Code | Type | Description
 ---- | ---- | -----------
