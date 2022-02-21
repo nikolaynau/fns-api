@@ -28,10 +28,10 @@ Req | Name | Type | Description
 
 Req | Name | Type | Description
 --- | ---- | ---- | -----------
-    | email         | string | 
-    | name          | string | 
-    | phone         | string | 
-    | region        | string | 
-    | surname       | string | 
-\*  | sessionId     | string | 
-\*  | refresh_token | string | 
+&nbsp; | email         | string | 
+&nbsp; | name          | string | 
+&nbsp; | phone         | string | 
+&nbsp; | region        | string | 
+&nbsp; | surname       | string | 
+\*     | sessionId     | string | 
+\*     | refresh_token | string | 
