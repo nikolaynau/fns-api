@@ -5,7 +5,7 @@
 - [B-3. Get receipt details by id](#b-3-get-receipt-details-by-id)
 - [B-4. Get receipt list with short information](#b-4-get-receipt-list-with-short-information)
 - [B-5. Delete receipt by id](#b-5-delete-receipt-by-id)
-- [B-6. Check that the receipt exists with fiscal data](#b-6-check-that-the-receipt-exists-with-fiscal-data)
+- [B-6. Check receipt exists with fiscal data](#b-6-check-receipt-exists-with-fiscal-data)
 
 ## **B-1. Send request for get receipt**
 
@@ -140,7 +140,7 @@ Receipt successfully deleted.
 | **500 Server Error**        | string | The server was unable to process the request |
 | **503 Service Unavailable** | string | Service is temporarily unavailable           |
 
-## **B-6. Check that the receipt exists with fiscal data**
+## **B-6. Check receipt exists with fiscal data**
 
 `GET v2/check/ticket`
 
