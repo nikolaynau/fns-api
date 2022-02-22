@@ -100,6 +100,6 @@
 | --- | ---- | ------ | ----------- |
 | \*  | qr   | string |
 
-## ReceiptShortInfo
+## ReceiptShort
 
 ## ReceiptDetails

@@ -21,9 +21,9 @@ Authorization is required. More [here](./general-spec.md#authorization).
 
 #### Successful Response (Code: `200 OK`)
 
-| Req | Name             | Type                                             | Description                                        |
-| --- | ---------------- | ------------------------------------------------ | -------------------------------------------------- |
-| \*  | ReceiptShortInfo | [ReceiptShort](./data-model.md#ReceiptShortInfo) | Response data containing short receipt information |
+| Req | Name         | Type                                         | Description                                        |
+| --- | ------------ | -------------------------------------------- | -------------------------------------------------- |
+| \*  | ReceiptShort | [ReceiptShort](./data-model.md#ReceiptShort) | Response data containing short receipt information |
 
 #### **Errors**
 
@@ -49,9 +49,9 @@ Authorization is required. More [here](./general-spec.md#authorization).
 
 #### Successful Response (Code: `200 OK`)
 
-| Req | Name             | Type                                                 | Description                                        |
-| --- | ---------------- | ---------------------------------------------------- | -------------------------------------------------- |
-| \*  | ReceiptShortInfo | [ReceiptShortInfo](./data-model.md#ReceiptShortInfo) | Response data containing short receipt information |
+| Req | Name         | Type                                         | Description                                        |
+| --- | ------------ | -------------------------------------------- | -------------------------------------------------- |
+| \*  | ReceiptShort | [ReceiptShort](./data-model.md#ReceiptShort) | Response data containing short receipt information |
 
 #### **Errors**
 
@@ -102,9 +102,9 @@ Authorization is required. More [here](./general-spec.md#authorization).
 
 #### Successful Response (Code: `200 OK`)
 
-| Req | Name                | Type                                                          | Description                               |
-| --- | ------------------- | ------------------------------------------------------------- | ----------------------------------------- |
-| \*  | ReceiptListResponse | Array\<[ReceiptShortInfo](./data-model.md#ReceiptShortInfo)\> | Response data containing list of receipts |
+| Req | Name                | Type                                                  | Description                               |
+| --- | ------------------- | ----------------------------------------------------- | ----------------------------------------- |
+| \*  | ReceiptListResponse | Array\<[ReceiptShort](./data-model.md#ReceiptShort)\> | Response data containing list of receipts |
 
 #### **Errors**
 
