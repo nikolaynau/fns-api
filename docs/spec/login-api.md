@@ -5,7 +5,7 @@
 - [A-3. Login via LK FL](#a-3-login-via-lk-fl)
 - [A-4. Send request login by phone](#a-4-send-request-login-by-phone)
 - [A-5. Login by phone](#a-5-login-by-phone)
-
+- [A-6. Reauth login by refresh token](#a-6-reauth-login-by-refresh-token)
 
 ## **A-1. Get Esia url for OAuth2**
 
@@ -127,6 +127,33 @@ Req | Name | Belong | Type | Description
 Req | Name | Type | Description
 --- | ---- | ---- | -----------
 \*  | LoginResponse | [LoginResponse](./data-model.md#LoginResponse) | Response data containing login information
+
+#### **Errors**
+
+Code | Type | Description
+---- | ---- | -----------
+**400 Bad Request** | string | Invalid request parameters
+**500 Server Error** | string | The server was unable to process the request
+**503 Service Unavailable** | string | Service is temporarily unavailable
+
+
+## **A-6. Reauth login by refresh token**
+
+`POST v2/mobile/users/refresh`
+
+Authorization is not required.
+
+#### **Request Parameters**
+
+Req | Name | Belong | Type | Description
+----| ---- | ------ | ---- | -----------
+\* | RefreshTokensRequest | Body | [RefreshTokensRequest](./data-model.md#RefreshTokensRequest) | Request data
+
+#### Successful Response (Code: `200 OK`)
+
+Req | Name | Type | Description
+--- | ---- | ---- | -----------
+\*  | RefreshTokensResponse | [RefreshTokensResponse](./data-model.md#RefreshTokensResponse) | Response data containing new tokens
 
 #### **Errors**
 

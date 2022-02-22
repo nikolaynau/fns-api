@@ -60,3 +60,17 @@ Req | Name | Type | Description
 &nbsp; | surname       | string | 
 \*     | sessionId     | string | 
 \*     | refresh_token | string | 
+
+## RefreshTokensRequest
+
+Req | Name | Type | Description
+--- | ---- | ---- | -----------
+\*     | refresh_token | string | 
+\*     | client_secret | string | 
+
+## RefreshTokensResponse
+
+Req | Name | Type | Description
+--- | ---- | ---- | -----------
+\*     | sessionId     | string | 
+\*     | refresh_token | string | 
