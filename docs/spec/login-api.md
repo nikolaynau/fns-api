@@ -19,17 +19,16 @@ Authorization is not required.
 
 #### Successful Response (Code: `200 OK`)
 
-Req | Name | Type | Description
---- | ---- | ---- | -----------
-\*  | EsiaUrlResponse | [EsiaUrlResponse](./data-model.md#EsiaUrlResponse) | Response data containing url
+| Req | Name            | Type                                               | Description                  |
+| --- | --------------- | -------------------------------------------------- | ---------------------------- |
+| \*  | EsiaUrlResponse | [EsiaUrlResponse](./data-model.md#EsiaUrlResponse) | Response data containing url |
 
 #### **Errors**
 
-Code | Type | Description
----- | ---- | -----------
-**500 Server Error** | string | The server was unable to process the request
-**503 Service Unavailable** | string | Service is temporarily unavailable
-
+| Code                        | Type   | Description                                  |
+| --------------------------- | ------ | -------------------------------------------- |
+| **500 Server Error**        | string | The server was unable to process the request |
+| **503 Service Unavailable** | string | Service is temporarily unavailable           |
 
 ## **A-2. Login via Esia**
 
@@ -39,24 +38,23 @@ Authorization is not required.
 
 #### **Request Parameters**
 
-Req | Name | Belong | Type | Description
-----| ---- | ------ | ---- | -----------
-\* | EsiaLoginRequest | Body | [EsiaLoginRequest](./data-model.md#EsiaLoginRequest) | Request data
+| Req | Name             | Belong | Type                                                 | Description  |
+| --- | ---------------- | ------ | ---------------------------------------------------- | ------------ |
+| \*  | EsiaLoginRequest | Body   | [EsiaLoginRequest](./data-model.md#EsiaLoginRequest) | Request data |
 
 #### Successful Response (Code: `200 OK`)
 
-Req | Name | Type | Description
---- | ---- | ---- | -----------
-\*  | LoginResponse | [LoginResponse](./data-model.md#LoginResponse) | Response data containing login information
+| Req | Name          | Type                                           | Description                                |
+| --- | ------------- | ---------------------------------------------- | ------------------------------------------ |
+| \*  | LoginResponse | [LoginResponse](./data-model.md#LoginResponse) | Response data containing login information |
 
 #### **Errors**
 
-Code | Type | Description
----- | ---- | -----------
-**400 Bad Request** | string | Invalid request parameters
-**500 Server Error** | string | The server was unable to process the request
-**503 Service Unavailable** | string | Service is temporarily unavailable
-
+| Code                        | Type   | Description                                  |
+| --------------------------- | ------ | -------------------------------------------- |
+| **400 Bad Request**         | string | Invalid request parameters                   |
+| **500 Server Error**        | string | The server was unable to process the request |
+| **503 Service Unavailable** | string | Service is temporarily unavailable           |
 
 ## **A-3. Login via LK FL**
 
@@ -66,24 +64,23 @@ Authorization is not required.
 
 #### **Request Parameters**
 
-Req | Name | Belong | Type | Description
-----| ---- | ------ | ---- | -----------
-\* | FLLoginRequest | Body | [FLLoginRequest](./data-model.md#FLLoginRequest) | Request data
+| Req | Name           | Belong | Type                                             | Description  |
+| --- | -------------- | ------ | ------------------------------------------------ | ------------ |
+| \*  | FLLoginRequest | Body   | [FLLoginRequest](./data-model.md#FLLoginRequest) | Request data |
 
 #### Successful Response (Code: `200 OK`)
 
-Req | Name | Type | Description
---- | ---- | ---- | -----------
-\*  | LoginResponse | [LoginResponse](./data-model.md#LoginResponse) | Response data containing login information
+| Req | Name          | Type                                           | Description                                |
+| --- | ------------- | ---------------------------------------------- | ------------------------------------------ |
+| \*  | LoginResponse | [LoginResponse](./data-model.md#LoginResponse) | Response data containing login information |
 
 #### **Errors**
 
-Code | Type | Description
----- | ---- | -----------
-**400 Bad Request** | string | Invalid request parameters
-**500 Server Error** | string | The server was unable to process the request
-**503 Service Unavailable** | string | Service is temporarily unavailable
-
+| Code                        | Type   | Description                                  |
+| --------------------------- | ------ | -------------------------------------------- |
+| **400 Bad Request**         | string | Invalid request parameters                   |
+| **500 Server Error**        | string | The server was unable to process the request |
+| **503 Service Unavailable** | string | Service is temporarily unavailable           |
 
 ## **A-4. Send request login by phone**
 
@@ -93,9 +90,9 @@ Authorization is not required.
 
 #### **Request Parameters**
 
-Req | Name | Belong | Type | Description
-----| ---- | ------ | ---- | -----------
-\* | PhoneLoginRequest | Body | [PhoneLoginRequest](./data-model.md#PhoneLoginRequest) | Request data
+| Req | Name              | Belong | Type                                                   | Description  |
+| --- | ----------------- | ------ | ------------------------------------------------------ | ------------ |
+| \*  | PhoneLoginRequest | Body   | [PhoneLoginRequest](./data-model.md#PhoneLoginRequest) | Request data |
 
 #### Successful Response (Code: `200 OK`)
 
@@ -103,12 +100,11 @@ An SMS with a verification code has been sent to the specified phone number.
 
 #### **Errors**
 
-Code | Type | Description
----- | ---- | -----------
-**400 Bad Request** | string | Invalid request parameters
-**500 Server Error** | string | The server was unable to process the request
-**503 Service Unavailable** | string | Service is temporarily unavailable
-
+| Code                        | Type   | Description                                  |
+| --------------------------- | ------ | -------------------------------------------- |
+| **400 Bad Request**         | string | Invalid request parameters                   |
+| **500 Server Error**        | string | The server was unable to process the request |
+| **503 Service Unavailable** | string | Service is temporarily unavailable           |
 
 ## **A-5. Login by phone**
 
@@ -118,24 +114,23 @@ Authorization is not required.
 
 #### **Request Parameters**
 
-Req | Name | Belong | Type | Description
-----| ---- | ------ | ---- | -----------
-\* | PhoneVerifyRequest | Body | [PhoneVerifyRequest](./data-model.md#PhoneVerifyRequest) | Request data
+| Req | Name               | Belong | Type                                                     | Description  |
+| --- | ------------------ | ------ | -------------------------------------------------------- | ------------ |
+| \*  | PhoneVerifyRequest | Body   | [PhoneVerifyRequest](./data-model.md#PhoneVerifyRequest) | Request data |
 
 #### Successful Response (Code: `200 OK`)
 
-Req | Name | Type | Description
---- | ---- | ---- | -----------
-\*  | LoginResponse | [LoginResponse](./data-model.md#LoginResponse) | Response data containing login information
+| Req | Name          | Type                                           | Description                                |
+| --- | ------------- | ---------------------------------------------- | ------------------------------------------ |
+| \*  | LoginResponse | [LoginResponse](./data-model.md#LoginResponse) | Response data containing login information |
 
 #### **Errors**
 
-Code | Type | Description
----- | ---- | -----------
-**400 Bad Request** | string | Invalid request parameters
-**500 Server Error** | string | The server was unable to process the request
-**503 Service Unavailable** | string | Service is temporarily unavailable
-
+| Code                        | Type   | Description                                  |
+| --------------------------- | ------ | -------------------------------------------- |
+| **400 Bad Request**         | string | Invalid request parameters                   |
+| **500 Server Error**        | string | The server was unable to process the request |
+| **503 Service Unavailable** | string | Service is temporarily unavailable           |
 
 ## **A-6. Reauth login by refresh token**
 
@@ -145,20 +140,20 @@ Authorization is not required.
 
 #### **Request Parameters**
 
-Req | Name | Belong | Type | Description
-----| ---- | ------ | ---- | -----------
-\* | RefreshTokensRequest | Body | [RefreshTokensRequest](./data-model.md#RefreshTokensRequest) | Request data
+| Req | Name                 | Belong | Type                                                         | Description  |
+| --- | -------------------- | ------ | ------------------------------------------------------------ | ------------ |
+| \*  | RefreshTokensRequest | Body   | [RefreshTokensRequest](./data-model.md#RefreshTokensRequest) | Request data |
 
 #### Successful Response (Code: `200 OK`)
 
-Req | Name | Type | Description
---- | ---- | ---- | -----------
-\*  | RefreshTokensResponse | [RefreshTokensResponse](./data-model.md#RefreshTokensResponse) | Response data containing new tokens
+| Req | Name                  | Type                                                           | Description                         |
+| --- | --------------------- | -------------------------------------------------------------- | ----------------------------------- |
+| \*  | RefreshTokensResponse | [RefreshTokensResponse](./data-model.md#RefreshTokensResponse) | Response data containing new tokens |
 
 #### **Errors**
 
-Code | Type | Description
----- | ---- | -----------
-**400 Bad Request** | string | Invalid request parameters
-**500 Server Error** | string | The server was unable to process the request
-**503 Service Unavailable** | string | Service is temporarily unavailable
+| Code                        | Type   | Description                                  |
+| --------------------------- | ------ | -------------------------------------------- |
+| **400 Bad Request**         | string | Invalid request parameters                   |
+| **500 Server Error**        | string | The server was unable to process the request |
+| **503 Service Unavailable** | string | Service is temporarily unavailable           |
