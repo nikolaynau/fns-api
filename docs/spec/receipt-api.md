@@ -77,8 +77,8 @@ Authorization is required. More [here](./general-spec.md#authorization).
 
 #### Successful Response (Code: `200 OK`)
 
-| Req | Name           | Type                                             | Description                                       |
-| --- | -------------- | ------------------------------------------------ | ------------------------------------------------- |
+| Req | Name           | Type                                             | Description                                                |
+| --- | -------------- | ------------------------------------------------ | ---------------------------------------------------------- |
 | \*  | ReceiptDetails | [ReceiptDetails](./data-model.md#ReceiptDetails) | Response data containing details information about receipt |
 
 #### **Errors**
