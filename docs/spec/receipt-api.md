@@ -1,13 +1,13 @@
 # Receipt API Specification
 
-- [B-1. Send a request for a get receipt](#b-1-send-a-request-for-a-get-receipt)
-- [B-2. Send a request for a get receipt by QR-code data](#b-2-send-a-request-for-a-get-receipt-by-qr-code-data)
+- [B-1. Send request for get receipt](#b-1-send-request-for-get-receipt)
+- [B-2. Send request for get receipt by QR-code data](#b-2-send-request-for-get-receipt-by-qr-code-data)
 - [B-3. Get full receipt details by id](#b-3-get-full-receipt-details-by-id)
 - [B-4. Get receipt list with short information](#b-4-get-receipt-list-with-short-information)
 - [B-5. Delete receipt by id](#b-5-delete-receipt-by-id)
 - [B-6. Check that the receipt exists with fiscal data](#b-6-check-that-the-receipt-exists-with-fiscal-data)
 
-## **B-1. Send a request for a get receipt**
+## **B-1. Send request for get receipt**
 
 `POST v2/ticket`
 
@@ -35,7 +35,7 @@ Authorization is required. More [here](./general-spec.md#authorization).
 | **500 Server Error**        | string | The server was unable to process the request |
 | **503 Service Unavailable** | string | Service is temporarily unavailable           |
 
-## **B-2. Send a request for a get receipt by QR-code data**
+## **B-2. Send request for get receipt by QR-code data**
 
 `POST v2/ticket`
 
