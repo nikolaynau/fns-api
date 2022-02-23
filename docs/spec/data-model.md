@@ -12,8 +12,8 @@
 
 ## EsiaUrlResponse
 
-| Req | Name | Type   | Description                                               |
-| --- | ---- | ------ | --------------------------------------------------------- |
+| Req | Name | Type   | Description                                                |
+| --- | ---- | ------ | ---------------------------------------------------------- |
 | \*  | url  | string | Url to login via external Esia provider, that uses OAuth2. |
 
 ## EsiaLoginRequest
@@ -22,7 +22,7 @@
 | --- | ------------------ | ------ | ------------------------------------------------------------------------------------------------------------- |
 | \*  | authorization_code | string | The authorization code is a temporary code that the client will exchange for an access token. Used in OAuth2. |
 | \*  | state              | string | The state parameter is used to protect against XSRF in OAuth2 flow.                                           |
-| \*  | client_secret      | string | [Client secret](./terms.md#client-secret).                                                                |
+| \*  | client_secret      | string | [Client secret](./terms.md#client-secret)                                                                     |
 
 ## FLLoginRequest
 
@@ -30,24 +30,24 @@
 | --- | ------------- | ------ | ------------------------------------------------------------------- |
 | \*  | inn           | string | Tax identification number. Used when logging in through the FNS LK. |
 | \*  | password      | string | FNS LK password.                                                    |
-| \*  | client_secret | string | [Client secret](./terms.md#client-secret).                      |
+| \*  | client_secret | string | [Client secret](./terms.md#client-secret)                           |
 
 ## PhoneLoginRequest
 
-| Req | Name          | Type   | Description                                    |
-| --- | ------------- | ------ | ---------------------------------------------- |
-| \*  | phone         | string | Your phone number.                             |
-| \*  | captcha       | string | Google captcha key.                            |
-| \*  | os            | string | Value: `android` or `ios`.                     |
-| \*  | client_secret | string | [Client secret](./terms.md#client-secret). |
+| Req | Name          | Type   | Description                               |
+| --- | ------------- | ------ | ----------------------------------------- |
+| \*  | phone         | string | Your phone number.                        |
+| \*  | captcha       | string | Google captcha key.                       |
+| \*  | os            | string | Value: `android` or `ios`.                |
+| \*  | client_secret | string | [Client secret](./terms.md#client-secret) |
 
 ## PhoneVerifyRequest
 
-| Req | Name          | Type   | Description                                    |
-| --- | ------------- | ------ | ---------------------------------------------- |
-| \*  | phone         | string | Your phone number.                             |
-| \*  | code          | string | Verification code sent to you by SMS.          |
-| \*  | client_secret | string | [Client secret](./terms.md#client-secret). |
+| Req | Name          | Type   | Description                               |
+| --- | ------------- | ------ | ----------------------------------------- |
+| \*  | phone         | string | Your phone number.                        |
+| \*  | code          | string | Verification code sent to you by SMS.     |
+| \*  | client_secret | string | [Client secret](./terms.md#client-secret) |
 
 ## LoginResponse
 
@@ -59,21 +59,21 @@
 | &nbsp; | region        | string | Your region (optional).                                                                            |
 | &nbsp; | surname       | string | Your surname (optional).                                                                           |
 | \*     | sessionId     | string | [Access token](./terms.md#access-token). Used in [authorization](./general-spec.md#authorization). |
-| \*     | refresh_token | string | [Refresh token](./terms.md#refresh-token).                                                         |
+| \*     | refresh_token | string | [Refresh token](./terms.md#refresh-token)                                                          |
 
 ## RefreshTokensRequest
 
-| Req | Name          | Type   | Description                                    |
-| --- | ------------- | ------ | ---------------------------------------------- |
-| \*  | refresh_token | string | [Refresh token](./terms.md#refresh-token).     |
-| \*  | client_secret | string | [Client secret](./terms.md#client-secret). |
+| Req | Name          | Type   | Description                               |
+| --- | ------------- | ------ | ----------------------------------------- |
+| \*  | refresh_token | string | [Refresh token](./terms.md#refresh-token) |
+| \*  | client_secret | string | [Client secret](./terms.md#client-secret) |
 
 ## RefreshTokensResponse
 
 | Req | Name          | Type   | Description                                                                                        |
 | --- | ------------- | ------ | -------------------------------------------------------------------------------------------------- |
 | \*  | sessionId     | string | [Access token](./terms.md#access-token). Used in [authorization](./general-spec.md#authorization). |
-| \*  | refresh_token | string | [Refresh token](./terms.md#refresh-token).                                                         |
+| \*  | refresh_token | string | [Refresh token](./terms.md#refresh-token)                                                          |
 
 ## AddReceiptRequest
 
