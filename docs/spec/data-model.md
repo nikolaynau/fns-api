@@ -77,29 +77,70 @@
 
 ## AddReceiptRequest
 
-| Req | Name        | Type                                    | Description |
-| --- | ----------- | --------------------------------------- | ----------- |
-| \*  | fiscalData  | [FiscalDataRequest](#fiscaldatarequest) |
-| \*  | sendToEmail | boolean                                 |
+| Req | Name        | Type                                    | Description                                            |
+| --- | ----------- | --------------------------------------- | ------------------------------------------------------ |
+| \*  | fiscalData  | [FiscalDataRequest](#fiscaldatarequest) | Fiscal data.                                           |
+| \*  | sendToEmail | boolean                                 | Specify `true` if you want to send a receipt by email. |
 
 ## FiscalDataRequest
 
-| Req | Name          | Type   | Description |
-| --- | ------------- | ------ | ----------- |
-| \*  | date          | string |
-| \*  | operationType | int    |
-| \*  | sum           | long   |
-| \*  | operationType | int    |
-| \*  | fsId          | string |
-| \*  | documentId    | string |
-| \*  | fiscalSign    | string |
+Alias for [ReceiptQuery](#receiptquery) type.
 
 ## AddReceiptQRRequest
 
-| Req | Name | Type   | Description |
-| --- | ---- | ------ | ----------- |
-| \*  | qr   | string |
+| Req | Name | Type   | Description                                                                          |
+| --- | ---- | ------ | ------------------------------------------------------------------------------------ |
+| \*  | qr   | string | String with data from the qr-code on the receipt. More [here](./receipt-qr-code.md). |
 
 ## ReceiptShort
 
+| Req    | Name         | Type                          | Description                       |
+| ------ | ------------ | ----------------------------- | --------------------------------- |
+| \*     | id           | string                        |                                   |
+| \*     | status       | int                           |                                   |
+| \*     | kind         | string                        | Available string: `kkt` or `npd`. |
+| \*     | createdAt    | string                        |                                   |
+| \*     | qr           | string                        |                                   |
+| \*     | operation    | [Operation](#operation)       |                                   |
+| \*     | query        | [ReceiptQuery](#receiptquery) |                                   |
+| &nbsp; | organization | [Organization](#organization) |                                   |
+| &nbsp; | seller       | [Seller](#seller)             |                                   |
+
 ## ReceiptDetails
+
+## Operation
+
+| Req | Name | Type   | Description                                                                                                                                 |
+| --- | ---- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| \*  | date | string | Date from receipt. The date format is `yyyy-MM-dd'T'HH:mm:ss`, seconds are optional, they can be reset to zero. E.g. `2018-05-17T17:57:00`. |
+| \*  | type | int    | Operation type (sale, purchase, etc.). See [OperationType](#operationtype).                                                                 |
+| \*  | sum  | long   | Total amount from the receipt in minimum monetary units.                                                                                    |
+
+## ReceiptKind
+
+## Organization
+
+| Req | Name | Type   | Description               |
+| --- | ---- | ------ | ------------------------- |
+| \*  | name | string | Name of the organization. |
+| \*  | inn  | string | INN of the organization.  |
+
+## Seller
+
+| Req | Name | Type   | Description               |
+| --- | ---- | ------ | ------------------------- |
+| \*  | name | string | Name of the organization. |
+| \*  | inn  | string | INN of the organization.  |
+
+## ReceiptStatus
+
+## ReceiptQuery
+
+| Req | Name          | Type   | Description                                                                                                                                 |
+| --- | ------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| \*  | date          | string | Date from receipt. The date format is `yyyy-MM-dd'T'HH:mm:ss`, seconds are optional, they can be reset to zero. E.g. `2018-05-17T17:57:00`. |
+| \*  | operationType | int    | Operation type (sale, purchase, etc.). See [OperationType](#operationtype).                                                                 |
+| \*  | sum           | long   | Total amount from the receipt in minimum monetary units.                                                                                    |
+| \*  | fsId          | string | FN number (Fiscal Number) 16-digit. E.g. `8710000100518392`.                                                                                |
+| \*  | documentId    | string | FD number (Fiscal Document) up to 10 digits. E.g. `54812`.                                                                                  |
+| \*  | fiscalSign    | string | FP number (Fiscal Sign of the Document) up to 10 digits. E.g. `3522207165`.                                                                 |
