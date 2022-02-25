@@ -1,15 +1,5 @@
 # Data Model
 
-## OperationType
-
-| Name          | Type | Value | Description                                      |
-| ------------- | ---- | ----- | ------------------------------------------------ |
-| Unknown       | int  | 0     | Unknown                                          |
-| Income        | int  | 1     | This most common, purchase of goods or services. |
-| ReturnIncome  | int  | 2     | This means a return of a product or service.     |
-| Expense       | int  | 3     | Expense                                          |
-| ReturnExpense | int  | 4     | Return expense                                   |
-
 ## EsiaUrlResponse
 
 | Req | Name | Type   | Description                                                |
@@ -84,29 +74,54 @@
 
 ## FiscalDataRequest
 
-Alias for [ReceiptQuery](#receiptquery) type.
+Alias for [FiscalData](#fiscaldata) type.
 
 ## AddReceiptQRRequest
 
-| Req | Name | Type   | Description                                                                          |
-| --- | ---- | ------ | ------------------------------------------------------------------------------------ |
-| \*  | qr   | string | String with data from the qr-code on the receipt. More [here](./receipt-qr-code.md). |
+| Req | Name | Type   | Description                                                                                      |
+| --- | ---- | ------ | ------------------------------------------------------------------------------------------------ |
+| \*  | qr   | string | The string contains the data from the qr-code on the receipt. More [here](./receipt-qr-code.md). |
 
 ## ReceiptShort
 
-| Req    | Name         | Type                          | Description                       |
-| ------ | ------------ | ----------------------------- | --------------------------------- |
-| \*     | id           | string                        |                                   |
-| \*     | status       | int                           |                                   |
-| \*     | kind         | string                        | Available string: `kkt` or `npd`. |
-| \*     | createdAt    | string                        |                                   |
-| \*     | qr           | string                        |                                   |
-| \*     | operation    | [Operation](#operation)       |                                   |
-| \*     | query        | [ReceiptQuery](#receiptquery) |                                   |
-| &nbsp; | organization | [Organization](#organization) |                                   |
-| &nbsp; | seller       | [Seller](#seller)             |                                   |
+| Req    | Name         | Type                          | Description                                                                                      |
+| ------ | ------------ | ----------------------------- | ------------------------------------------------------------------------------------------------ |
+| \*     | id           | string                        | Unique receipt identifier.                                                                       |
+| \*     | status       | int                           | Receipt request processing status. See [ReceiptStatus](#receiptstatus).                          |
+| \*     | kind         | string                        | Available string: `kkt` or `npd`. See [ReceiptKind](#receiptkind).                               |
+| \*     | createdAt    | string                        | Receipt request creation time in the format ISO8601. E.g. `2022-02-22T16:59:35+03:00`.           |
+| \*     | qr           | string                        | The string contains the data from the qr-code on the receipt. More [here](./receipt-qr-code.md). |
+| \*     | operation    | [Operation](#operation)       | Transaction information.                                                                         |
+| \*     | query        | [ReceiptQuery](#receiptquery) | Receipt fiscal data.                                                                             |
+| &nbsp; | organization | [Organization](#organization) | Information about the organization, if the receipt was received (optional).                      |
+| &nbsp; | seller       | [Seller](#seller)             | Information about the seller, if the receipt was received (optional).                            |
 
 ## ReceiptDetails
+
+| Req    | Name         | Type                          | Description                                                                                      |
+| ------ | ------------ | ----------------------------- | ------------------------------------------------------------------------------------------------ |
+| \*     | id           | string                        | Unique receipt identifier.                                                                       |
+| \*     | status       | int                           | Receipt request processing status. See [ReceiptStatus](#receiptstatus).                          |
+| \*     | kind         | string                        | Available string: `kkt` or `npd`. See [ReceiptKind](#receiptkind).                               |
+| \*     | createdAt    | string                        | Receipt request creation time in the format ISO8601. E.g. `2022-02-22T16:59:35+03:00`.           |
+| \*     | qr           | string                        | The string contains the data from the qr-code on the receipt. More [here](./receipt-qr-code.md). |
+| \*     | operation    | [Operation](#operation)       | Transaction information.                                                                         |
+| \*     | query        | [ReceiptQuery](#receiptquery) | Receipt fiscal data.                                                                             |
+| &nbsp; | ticket       | [Document](#document)         | Information about the receipt, if it was received (optional).                                    |
+| &nbsp; | organization | [Organization](#organization) | Information about the organization, if the receipt was received (optional).                      |
+| &nbsp; | seller       | [Seller](#seller)             | Information about the seller, if the receipt was received (optional).                            |
+
+## Document
+
+| Req | Name     | Type                                | Description       |
+| --- | -------- | ----------------------------------- | ----------------- |
+| \*  | document | [ReceiptDocument](#receiptdocument) | Receipt document. |
+
+## ReceiptDocument
+
+| Req | Name    | Type                | Description   |
+| --- | ------- | ------------------- | ------------- |
+| \*  | receipt | [Receipt](#receipt) | Receipt data. |
 
 ## Operation
 
@@ -115,8 +130,6 @@ Alias for [ReceiptQuery](#receiptquery) type.
 | \*  | date | string | Date from receipt. The date format is `yyyy-MM-dd'T'HH:mm:ss`, seconds are optional, they can be reset to zero. E.g. `2018-05-17T17:57:00`. |
 | \*  | type | int    | Operation type (sale, purchase, etc.). See [OperationType](#operationtype).                                                                 |
 | \*  | sum  | long   | Total amount from the receipt in minimum monetary units.                                                                                    |
-
-## ReceiptKind
 
 ## Organization
 
@@ -134,7 +147,53 @@ Alias for [ReceiptQuery](#receiptquery) type.
 
 ## ReceiptStatus
 
+| Name                      | Type         | Value      | Description |
+| ------------------------- | ------------ | ---------- | ----------- |
+| NPD_FOUND                 | Array\<int\> | [20]       |             |
+| NPD_NOT_FOUND             | Array\<int\> | [422]      |             |
+| COPY_REQUESTED            | Array\<int\> | [3,11]     |             |
+| ERROR                     | Array\<int\> | [4]        |             |
+| HAVE_COPY                 | Array\<int\> | [2]        |             |
+| HSM_NOK                   | Array\<int\> | [8,10]     |             |
+| HSM_REQUESTED             | Array\<int\> | [0,7,9]    |             |
+| STANDALONE_CASH           | Array\<int\> | [12,13,15] |             |
+| RETRIEVE_FAILED           | Array\<int\> | [5]        |             |
+| UNSUPPORTED_DOCUMENT_TYPE | Array\<int\> | [16]       |             |
+
+## OperationType
+
+| Name           | Type | Value | Description                                      |
+| -------------- | ---- | ----- | ------------------------------------------------ |
+| UNKNOWN        | int  | 0     | Unknown                                          |
+| INCOME         | int  | 1     | This most common, purchase of goods or services. |
+| INCOME_RETURN  | int  | 2     | This means a return of a product or service.     |
+| EXPENSE        | int  | 3     | Expense                                          |
+| EXPENSE_RETURN | int  | 4     | Return expense                                   |
+
+## ReceiptKind
+
+| Name | Type   | Value | Description |
+| ---- | ------ | ----- | ----------- |
+| KKT  | string | "kkt" |             |
+| NPD  | string | "npd" |             |
+
+## TaxationType
+
+| Name    | Type | Value | Description |
+| ------- | ---- | ----- | ----------- |
+| UNKNOWN | int  | 0     |             |
+| OSN     | int  | 1     |             |
+| ISN     | int  | 2     |             |
+| EXT_USN | int  | 3     |             |
+| ENVD    | int  | 8     |             |
+| ESHN    | int  | 16    |             |
+| PSN     | int  | 32    |             |
+
 ## ReceiptQuery
+
+Alias for [FiscalData](#fiscaldata) type.
+
+## FiscalData
 
 | Req | Name          | Type   | Description                                                                                                                                 |
 | --- | ------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -144,3 +203,7 @@ Alias for [ReceiptQuery](#receiptquery) type.
 | \*  | fsId          | string | FN number (Fiscal Number) 16-digit. E.g. `8710000100518392`.                                                                                |
 | \*  | documentId    | string | FD number (Fiscal Document) up to 10 digits. E.g. `54812`.                                                                                  |
 | \*  | fiscalSign    | string | FP number (Fiscal Sign of the Document) up to 10 digits. E.g. `3522207165`.                                                                 |
+
+## Receipt
+
+## ReceiptItem
