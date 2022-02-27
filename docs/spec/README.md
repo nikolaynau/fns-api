@@ -6,3 +6,4 @@
 - [Receipt API Spec](./receipt-api.md)
 - [Data Model](./data-model.md)
 - [Receipt QR-code Spec](./receipt-qr-code.md)
+- [Receipt Status](./receipt-status.md)

@@ -31,7 +31,7 @@ Authorization is required. More [here](./general-spec.md#authorization).
 | --------------------------- | ------ | --------------------------------------------- |
 | **400 Bad Request**         | string | Invalid request parameters.                   |
 | **401 Unauthorized**        | string | Authorization required.                       |
-| **429 Too Many Requests**   | string | Daily amount limit exceeded.                  |
+| **429 Too Many Requests**   | string | Daily limit exceeded.                         |
 | **500 Server Error**        | string | The server was unable to process the request. |
 | **503 Service Unavailable** | string | Service is temporarily unavailable.           |
 
@@ -59,7 +59,7 @@ Authorization is required. More [here](./general-spec.md#authorization).
 | --------------------------- | ------ | --------------------------------------------- |
 | **400 Bad Request**         | string | Invalid request parameters.                   |
 | **401 Unauthorized**        | string | Authorization required.                       |
-| **429 Too Many Requests**   | string | Daily amount limit exceeded.                  |
+| **429 Too Many Requests**   | string | Daily limit exceeded.                         |
 | **500 Server Error**        | string | The server was unable to process the request. |
 | **503 Service Unavailable** | string | Service is temporarily unavailable.           |
 
@@ -152,7 +152,7 @@ Authorization is required. More [here](./general-spec.md#authorization).
 | --- | ------------- | ------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | \*  | date          | Query  | string | Date from receipt. The date format is `yyyy-MM-dd'T'HH:mm:ss`, seconds are optional, they can be reset to zero. E.g. `2018-05-17T17:57:00`. |
 | \*  | operationType | Query  | int    | Operation type (sale, purchase, etc.). See [OperationType](./data-model.md#OperationType).                                                  |
-| \*  | sum           | Query  | long   | Total amount from the receipt in minimum monetary units.                                                                                    |
+| \*  | sum           | Query  | long   | Total sum from the receipt, in minimum money units.                                                                                         |
 | \*  | fsId          | Query  | string | FN number (Fiscal Number) 16-digit. E.g. `8710000100518392`.                                                                                |
 | \*  | documentId    | Query  | long   | FD number (Fiscal Document) up to 10 digits. E.g. `54812`.                                                                                  |
 | \*  | fiscalSign    | Query  | long   | FP number (Fiscal Sign of the Document) up to 10 digits. E.g. `3522207165`.                                                                 |
