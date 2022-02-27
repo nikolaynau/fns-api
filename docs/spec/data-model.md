@@ -256,15 +256,15 @@ Alias for [FiscalData](#fiscaldata) type.
 | \*     | sum         | long   | Sum of item, in minimum money units.                  |
 | &nbsp; | nds         | int    |                                                       |
 | &nbsp; | ndsNo       | long   | Sum without VAT.                                      |
-| &nbsp; | nds10       | int    | VAT amount 10%                                        |
-| &nbsp; | nds18       | int    | VAT amount 18%                                        |
-| &nbsp; | nds20       | int    | VAT amount 20%                                        |
+| &nbsp; | nds10       | int    | VAT amount 10%.                                       |
+| &nbsp; | nds18       | int    | VAT amount 18%.                                       |
+| &nbsp; | nds20       | int    | VAT amount 20%.                                       |
 | &nbsp; | paymentType | int    | Payment type. More detailed information is not known. |
 | &nbsp; | providerInn | string | INN of the fiscal organization.                       |
 
 ## UserProperty
 
-| Req | Name          | Type   | Description |
-| --- | ------------- | ------ | ----------- |
-| \*  | propertyName  | string |             |
-| \*  | propertyValue | string |             |
+| Req | Name          | Type   | Description          |
+| --- | ------------- | ------ | -------------------- |
+| \*  | propertyName  | string | User property name.  |
+| \*  | propertyValue | string | User property value. |
