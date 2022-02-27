@@ -237,7 +237,7 @@ Alias for [FiscalData](#fiscaldata) type.
 | \*     | receiptCode             | int                           | Receipt code.                                                                       |
 | \*     | requestNumber           | int                           | Request number.                                                                     |
 | \*     | shiftNumber             | int                           | Shift number.                                                                       |
-| \*     | taxationType            | int                           | Type of taxation system.                                                            |
+| \*     | taxationType            | int                           | Type of taxation system. See [TaxationType](#taxationtype).                         |
 | \*     | user                    | string                        | Seller name.                                                                        |
 | \*     | userInn                 | string                        | INN of the seller.                                                                  |
 | &nbsp; | retailPlaceAddress      | string                        | Point of sale address.                                                              |
