@@ -55,10 +55,10 @@ export interface ReceiptShort {
   id: string;
   status: number;
   kind: ReceiptKind;
-  createdAt: string;
-  qr: string;
-  operation: Operation;
-  query: ReceiptQuery;
+  createdAt?: string;
+  qr?: string;
+  operation?: Operation;
+  query?: ReceiptQuery;
   organization?: Organization;
   seller?: Seller;
 }

@@ -2,6 +2,10 @@ import 'dotenv/config';
 import axios from 'axios';
 import { BASE_URL, defaultHeaders, LoginApi } from '../..';
 
+const inn = process.env.TEST_INN as string;
+const password = process.env.TEST_PASSWORD as string;
+const clientSecret = process.env.TEST_CLIENT_SECRET as string;
+
 describe('LoginApi (e2e)', () => {
   let loginApi: LoginApi;
 
@@ -23,9 +27,9 @@ describe('LoginApi (e2e)', () => {
 
   it('loginLKFL', async () => {
     const response = await loginApi.loginLKFL({
-      inn: process.env.TEST_INN as string,
-      password: process.env.TEST_PASSWORD as string,
-      client_secret: process.env.TEST_CLIENT_SECRET as string
+      inn,
+      password,
+      client_secret: clientSecret
     });
     expect(response.status).toBe(200);
     expect(response.data).toBeDefined();
