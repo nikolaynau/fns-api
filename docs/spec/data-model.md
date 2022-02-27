@@ -85,10 +85,10 @@
 | \*     | id           | string                        | Unique receipt identifier.                                                                       |
 | \*     | status       | int                           | Receipt request processing status. See [ReceiptStatus](#receiptstatus).                          |
 | \*     | kind         | string                        | Available string: `kkt` or `npd`. See [ReceiptKind](#receiptkind).                               |
-| \*     | createdAt    | string                        | Receipt request creation time in the format ISO8601. E.g. `2022-02-22T16:59:35+03:00`.           |
-| \*     | qr           | string                        | The string contains the data from the qr-code on the receipt. More [here](./receipt-qr-code.md). |
-| \*     | operation    | [Operation](#operation)       | Transaction information.                                                                         |
-| \*     | query        | [ReceiptQuery](#receiptquery) | Receipt fiscal data.                                                                             |
+| &nbsp; | createdAt    | string                        | Receipt request creation time in the format ISO8601. E.g. `2022-02-22T16:59:35+03:00`.           |
+| &nbsp; | qr           | string                        | The string contains the data from the qr-code on the receipt. More [here](./receipt-qr-code.md). |
+| &nbsp; | operation    | [Operation](#operation)       | Transaction information.                                                                         |
+| &nbsp; | query        | [ReceiptQuery](#receiptquery) | Receipt fiscal data.                                                                             |
 | &nbsp; | organization | [Organization](#organization) | Information about the organization, if the receipt was received (optional).                      |
 | &nbsp; | seller       | [Seller](#seller)             | Information about the seller, if the receipt was received (optional).                            |
 
