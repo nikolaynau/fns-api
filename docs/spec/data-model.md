@@ -206,45 +206,45 @@ Alias for [FiscalData](#fiscaldata) type.
 
 ## Receipt
 
-| Req    | Name                    | Type                          | Description                                                                         |
-| ------ | ----------------------- | ----------------------------- | ----------------------------------------------------------------------------------- |
-| \*     | dateTime                | long                          | Purchase date in timestamp. E.g. `1551000840`.                                      |
-| \*     | totalSum                | long                          | Total sum from the receipt, in minimum money units.                                 |
-| \*     | cashTotalSum            | long                          | Sum paid in cash, in minimum money units.                                           |
-| \*     | ecashTotalSum           | long                          | Sum paid by non-cash payment method, in minimum money units.                        |
-| &nbsp; | creditSum               | long                          | Credit sum, in minimum money units.                                                 |
-| &nbsp; | prepaidSum              | long                          | Prepayment sum, in minimum money units.                                             |
-| &nbsp; | provisionSum            | long                          | Provision sum, in minimum money units.                                              |
-| &nbsp; | ndsNo                   | long                          | Sum without VAT.                                                                    |
-| &nbsp; | nds10                   | int                           | VAT amount 10%                                                                      |
-| &nbsp; | nds18                   | int                           | VAT amount 18%                                                                      |
-| &nbsp; | nds20                   | int                           | VAT amount 20%                                                                      |
-| \*     | fiscalDriveNumber       | string                        | FN number (Fiscal Number) 16-digit. E.g. `8710000100518392`.                        |
-| &nbsp; | fiscalDocumentFormatVer | int                           | Fiscal document number format version.                                              |
-| \*     | fiscalDocumentNumber    | long                          | FD number (Fiscal Document) up to 10 digits. E.g. `54812`.                          |
-| \*     | fiscalSign              | long                          | FP number (Fiscal Sign of the Document) up to 10 digits. E.g. `3522207165`.         |
-| &nbsp; | fnsSite                 | string                        | Value: `nalog.ru`                                                                   |
-| &nbsp; | internetSign            | int                           |                                                                                     |
-| \*     | items                   | Array\<ReceiptItem\>          | Producs / services involved in the operation.                                       |
-| \*     | kktRegId                | string                        | Registration number of KKT.                                                         |
-| &nbsp; | machineNumber           | string                        |                                                                                     |
-| &nbsp; | messageFiscalSign       | long                          |                                                                                     |
-| \*     | operationType           | int                           | Operation type (sale, purchase, etc.). See [OperationType](#operationtype).         |
-| \*     | operator                | string                        | Data of the cashier who punched the receipt.                                        |
-| &nbsp; | paymentAgentType        | int                           |                                                                                     |
-| &nbsp; | propertiesData          | string                        | User data.                                                                          |
-| &nbsp; | propertiesUser          | [UserProperty](#userproperty) | User data.                                                                          |
-| \*     | receiptCode             | int                           | Receipt code.                                                                       |
-| \*     | requestNumber           | int                           | Request number.                                                                     |
-| \*     | shiftNumber             | int                           | Shift number.                                                                       |
-| \*     | taxationType            | int                           | Type of taxation system. See [TaxationType](#taxationtype).                         |
-| \*     | user                    | string                        | Seller name.                                                                        |
-| \*     | userInn                 | string                        | INN of the seller.                                                                  |
-| &nbsp; | retailPlaceAddress      | string                        | Point of sale address.                                                              |
-| &nbsp; | retailPlace             | string                        | Retail place.                                                                       |
-| &nbsp; | sellerAddress           | string                        | Seller email address.                                                               |
-| &nbsp; | buyerAddress            | string                        | Buyer information.                                                                  |
-| &nbsp; | sender_address          | string                        | E-mail address of the organization that sent information on the receipt to the FNS. |
+| Req    | Name                    | Type                                 | Description                                                                         |
+| ------ | ----------------------- | ------------------------------------ | ----------------------------------------------------------------------------------- |
+| \*     | dateTime                | long                                 | Purchase date in timestamp. E.g. `1551000840`.                                      |
+| \*     | totalSum                | long                                 | Total sum from the receipt, in minimum money units.                                 |
+| \*     | cashTotalSum            | long                                 | Sum paid in cash, in minimum money units.                                           |
+| \*     | ecashTotalSum           | long                                 | Sum paid by non-cash payment method, in minimum money units.                        |
+| &nbsp; | creditSum               | long                                 | Credit sum, in minimum money units.                                                 |
+| &nbsp; | prepaidSum              | long                                 | Prepayment sum, in minimum money units.                                             |
+| &nbsp; | provisionSum            | long                                 | Provision sum, in minimum money units.                                              |
+| &nbsp; | ndsNo                   | long                                 | Sum without VAT.                                                                    |
+| &nbsp; | nds10                   | int                                  | VAT amount 10%                                                                      |
+| &nbsp; | nds18                   | int                                  | VAT amount 18%                                                                      |
+| &nbsp; | nds20                   | int                                  | VAT amount 20%                                                                      |
+| \*     | fiscalDriveNumber       | string                               | FN number (Fiscal Number) 16-digit. E.g. `8710000100518392`.                        |
+| &nbsp; | fiscalDocumentFormatVer | int                                  | Fiscal document number format version.                                              |
+| \*     | fiscalDocumentNumber    | long                                 | FD number (Fiscal Document) up to 10 digits. E.g. `54812`.                          |
+| \*     | fiscalSign              | long                                 | FP number (Fiscal Sign of the Document) up to 10 digits. E.g. `3522207165`.         |
+| &nbsp; | fnsSite                 | string                               | Value: `nalog.ru`                                                                   |
+| &nbsp; | internetSign            | int                                  |                                                                                     |
+| \*     | items                   | Array\<[ReceiptItem](#receiptitem)\> | Producs / services involved in the operation.                                       |
+| \*     | kktRegId                | string                               | Registration number of KKT.                                                         |
+| &nbsp; | machineNumber           | string                               |                                                                                     |
+| &nbsp; | messageFiscalSign       | long                                 |                                                                                     |
+| \*     | operationType           | int                                  | Operation type (sale, purchase, etc.). See [OperationType](#operationtype).         |
+| \*     | operator                | string                               | Data of the cashier who punched the receipt.                                        |
+| &nbsp; | paymentAgentType        | int                                  |                                                                                     |
+| &nbsp; | propertiesData          | string                               | User data.                                                                          |
+| &nbsp; | propertiesUser          | [UserProperty](#userproperty)        | User data.                                                                          |
+| \*     | receiptCode             | int                                  | Receipt code.                                                                       |
+| \*     | requestNumber           | int                                  | Request number.                                                                     |
+| \*     | shiftNumber             | int                                  | Shift number.                                                                       |
+| \*     | taxationType            | int                                  | Type of taxation system. See [TaxationType](#taxationtype).                         |
+| \*     | user                    | string                               | Seller name.                                                                        |
+| \*     | userInn                 | string                               | INN of the seller.                                                                  |
+| &nbsp; | retailPlaceAddress      | string                               | Point of sale address.                                                              |
+| &nbsp; | retailPlace             | string                               | Retail place.                                                                       |
+| &nbsp; | sellerAddress           | string                               | Seller email address.                                                               |
+| &nbsp; | buyerAddress            | string                               | Buyer information.                                                                  |
+| &nbsp; | sender_address          | string                               | E-mail address of the organization that sent information on the receipt to the FNS. |
 
 ## ReceiptItem
 
