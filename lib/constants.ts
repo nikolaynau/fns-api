@@ -9,3 +9,4 @@ export const DEVICE_OS_HEADER = 'Device-OS';
 export const DEVICE_ID_HEADER = 'Device-Id';
 export const CLIENT_VERSION_HEADER = 'ClientVersion';
 export const ACCEPT_LANGUAGE_HEADER = 'Accept-Language';
+export const SESSION_ID_HEADER = 'sessionId';
