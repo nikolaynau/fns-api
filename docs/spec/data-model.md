@@ -67,14 +67,10 @@
 
 ## AddReceiptRequest
 
-| Req | Name        | Type                                    | Description                                            |
-| --- | ----------- | --------------------------------------- | ------------------------------------------------------ |
-| \*  | fiscalData  | [FiscalDataRequest](#fiscaldatarequest) | Fiscal data.                                           |
-| \*  | sendToEmail | boolean                                 | Specify `true` if you want to send a receipt by email. |
-
-## FiscalDataRequest
-
-Alias for [FiscalData](#fiscaldata) type.
+| Req | Name        | Type                      | Description                                            |
+| --- | ----------- | ------------------------- | ------------------------------------------------------ |
+| \*  | fiscalData  | [FiscalData](#fiscaldata) | Fiscal data.                                           |
+| \*  | sendToEmail | boolean                   | Specify `true` if you want to send a receipt by email. |
 
 ## AddReceiptQRRequest
 
@@ -244,7 +240,7 @@ Alias for [FiscalData](#fiscaldata) type.
 | &nbsp; | retailPlace             | string                               | Retail place.                                                                       |
 | &nbsp; | sellerAddress           | string                               | Seller email address.                                                               |
 | &nbsp; | buyerAddress            | string                               | Buyer information.                                                                  |
-| &nbsp; | sender_address          | string                               | E-mail address of the organization that sent information on the receipt to the FNS. |
+| &nbsp; | senderAddress           | string                               | E-mail address of the organization that sent information on the receipt to the FNS. |
 
 ## ReceiptItem
 
