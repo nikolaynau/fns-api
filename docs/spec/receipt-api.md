@@ -65,7 +65,7 @@ Authorization is required. More [here](./general-spec.md#authorization).
 
 ## **B-3. Get receipt details by id**
 
-`GET v2/ticket/{id}`
+`GET v2/tickets/{id}`
 
 Authorization is required. More [here](./general-spec.md#authorization).
 
