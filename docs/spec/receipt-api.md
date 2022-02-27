@@ -1,13 +1,13 @@
 # Receipt API Specification
 
-- [B-1. Send request for get receipt](#b-1-send-request-for-get-receipt)
-- [B-2. Send request for get receipt by QR-code data](#b-2-send-request-for-get-receipt-by-qr-code-data)
+- [B-1. Add receipt](#b-1-add-receipt)
+- [B-2. Add receipt by QR-code data](#b-2-add-receipt-by-qr-code-data)
 - [B-3. Get receipt details by id](#b-3-get-receipt-details-by-id)
-- [B-4. Get receipt list with short information](#b-4-get-receipt-list-with-short-information)
+- [B-4. Get receipt list with short info](#b-4-get-receipt-list-with-short-info)
 - [B-5. Delete receipt by id](#b-5-delete-receipt-by-id)
 - [B-6. Check receipt exists with fiscal data](#b-6-check-receipt-exists-with-fiscal-data)
 
-## **B-1. Send request for get receipt**
+## **B-1. Add receipt**
 
 `POST v2/ticket`
 
@@ -35,7 +35,7 @@ Authorization is required. More [here](./general-spec.md#authorization).
 | **500 Server Error**        | string | The server was unable to process the request. |
 | **503 Service Unavailable** | string | Service is temporarily unavailable.           |
 
-## **B-2. Send request for get receipt by QR-code data**
+## **B-2. Add receipt by QR-code data**
 
 `POST v2/ticket`
 
@@ -90,7 +90,7 @@ Authorization is required. More [here](./general-spec.md#authorization).
 | **500 Server Error**        | string | The server was unable to process the request. |
 | **503 Service Unavailable** | string | Service is temporarily unavailable.           |
 
-## **B-4. Get receipt list with short information**
+## **B-4. Get receipt list with short info**
 
 `GET v2/tickets`
 
