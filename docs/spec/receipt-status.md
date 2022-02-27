@@ -2,7 +2,7 @@
 
 ## Success
 
-This status means that the receipt was received from an external system. The receipt is available and you can get it.
+This status means that the receipt was received from an internal system. The receipt is available and you can get it.
 
 It includes:
 
@@ -11,7 +11,7 @@ It includes:
 
 ## Pending
 
-This status means that the receipt is in the process of being fetching from an external system.
+This status means that the receipt is in the process of being fetching from an internal system.
 
 It includes:
 
@@ -20,7 +20,7 @@ It includes:
 
 ## Error
 
-This status means that an error occurred while fetching from an external system. The error may be that the receipt was not found or for some other reason.
+This status means that an error occurred while fetching from an internal system. The error may be that the receipt was not found or for some other reason.
 
 It includes:
 
@@ -33,4 +33,4 @@ It includes:
 
 ## Other
 
-Any other status, that is not described below, can be considered as a fetch receipt error from external system.
+Any other status, that is not described below, can be considered as a fetch receipt error from internal system.
