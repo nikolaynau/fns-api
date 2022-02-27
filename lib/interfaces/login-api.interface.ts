@@ -10,10 +10,10 @@ export interface LoginApiInterface {
     cancelToken?: CancelToken
   ): Promise<AxiosResponse<LoginResponse, EsiaLoginRequest>>;
 
-  loginFKFL(
-    data: FLLoginRequest,
+  loginLKFL(
+    data: LKFLLoginRequest,
     cancelToken?: CancelToken
-  ): Promise<AxiosResponse<LoginResponse, FLLoginRequest>>;
+  ): Promise<AxiosResponse<LoginResponse, LKFLLoginRequest>>;
 
   loginByPhone(
     data: PhoneLoginRequest,
@@ -41,7 +41,7 @@ export interface EsiaLoginRequest {
   client_secret: string;
 }
 
-export interface FLLoginRequest {
+export interface LKFLLoginRequest {
   inn: string;
   password: string;
   client_secret: string;

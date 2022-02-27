@@ -2,7 +2,7 @@ import type { AxiosInstance, AxiosResponse, CancelToken } from 'axios';
 import type {
   EsiaLoginRequest,
   EsiaUrlResponse,
-  FLLoginRequest,
+  LKFLLoginRequest,
   LoginApiInterface,
   LoginResponse,
   PhoneLoginRequest,
@@ -31,10 +31,10 @@ export class LoginApi implements LoginApiInterface {
     });
   }
 
-  loginFKFL(
-    data: FLLoginRequest,
+  loginLKFL(
+    data: LKFLLoginRequest,
     cancelToken?: CancelToken
-  ): Promise<AxiosResponse<LoginResponse, FLLoginRequest>> {
+  ): Promise<AxiosResponse<LoginResponse, LKFLLoginRequest>> {
     return this.axiosInstance.post('v2/mobile/users/lkfl/auth', data, {
       cancelToken
     });
