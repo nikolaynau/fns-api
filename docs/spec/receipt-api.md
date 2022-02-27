@@ -1,13 +1,13 @@
 # Receipt API Specification
 
-- [B-1. Add receipt](#b-1-add-receipt)
+- [B-1. Add receipt by fiscal data](#b-1-add-receipt-by-fiscal-data)
 - [B-2. Add receipt by QR-code data](#b-2-add-receipt-by-qr-code-data)
 - [B-3. Get receipt details by id](#b-3-get-receipt-details-by-id)
 - [B-4. Get receipt list with short info](#b-4-get-receipt-list-with-short-info)
 - [B-5. Delete receipt by id](#b-5-delete-receipt-by-id)
 - [B-6. Check receipt exists with fiscal data](#b-6-check-receipt-exists-with-fiscal-data)
 
-## **B-1. Add receipt**
+## **B-1. Add receipt by fiscal data**
 
 `POST v2/ticket`
 
