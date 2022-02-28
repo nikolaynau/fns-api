@@ -1,0 +1,46 @@
+on:
+  push:
+    tags:
+    - 'v*'
+
+name: Release
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '12.x'
+        registry-url: 'https://registry.npmjs.org'
+    - name: Install latest npm
+      run: npm install -g npm@latest
+    - name: Check npm version
+      run: npm -v
+    - name: Install project dependencies
+      run: npm ci
+    - name: Build library
+      run: npm run build
+    - name: Get latest release version number
+      id: get_version
+      uses: battila7/get-version-action@v2
+    - name: Show latest release version number
+      run: echo ${{ steps.get_version.outputs.version-without-v }}
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+    - name: Publish
+      if: success()
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
