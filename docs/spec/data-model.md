@@ -197,7 +197,7 @@ Alias for [FiscalData](#fiscaldata) type.
 | \*  | operationType | int    | Operation type (sale, purchase, etc.). See [OperationType](#operationtype).                                                                 |
 | \*  | sum           | long   | Total sum from the receipt, in minimum money units.                                                                                         |
 | \*  | fsId          | string | FN number (Fiscal Number) 16-digit. E.g. `8710000100518392`.                                                                                |
-| \*  | documentId    | string | FD number (Fiscal Document) up to 10 digits. E.g. `54812`.                                                                                  |
+| \*  | documentId    | long   | FD number (Fiscal Document) up to 10 digits. E.g. `54812`.                                                                                  |
 | \*  | fiscalSign    | string | FP number (Fiscal Sign of the Document) up to 10 digits. E.g. `3522207165`.                                                                 |
 
 ## Receipt

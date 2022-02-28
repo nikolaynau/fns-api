@@ -16,7 +16,7 @@ import { SESSION_ID_HEADER } from './constants';
 export class ReceiptApi implements ReceiptApiInterface {
   constructor(
     private readonly axiosInstance: AxiosInstance,
-    private sessionId: string | undefined
+    private sessionId?: string
   ) {}
 
   setSessionId(value: string | undefined): void {
