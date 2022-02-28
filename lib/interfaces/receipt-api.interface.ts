@@ -81,7 +81,7 @@ export interface Seller {
   inn: string;
 }
 
-export const ReceiptStatus = {
+export const ReceiptStatus = Object.freeze({
   NPD_FOUND: [20],
   NPD_NOT_FOUND: [422],
   COPY_REQUESTED: [3, 11],
@@ -92,7 +92,7 @@ export const ReceiptStatus = {
   STANDALONE_CASH: [12, 13, 15],
   RETRIEVE_FAILED: [5],
   UNSUPPORTED_DOCUMENT_TYPE: [16]
-} as Readonly<Record<string, number[]>>;
+});
 
 export enum OperationType {
   UNKNOWN = 0,
