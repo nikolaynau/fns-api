@@ -21,16 +21,6 @@ export interface ReceiptApiInterface {
   ): Promise<AxiosResponse<ReceiptShort[]>>;
 
   removeReceipt(id: string, cancelToken?: CancelToken): Promise<AxiosResponse>;
-
-  validateReceipt(
-    date: string,
-    operationType: number,
-    sum: number,
-    fsId: string,
-    documentId: number,
-    fiscalSign: number,
-    cancelToken?: CancelToken
-  ): Promise<AxiosResponse>;
 }
 
 export interface AddReceiptRequest {

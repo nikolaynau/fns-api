@@ -1,4 +1,9 @@
-import type { AxiosInstance, AxiosResponse, CancelToken } from 'axios';
+import type {
+  AxiosInstance,
+  AxiosRequestHeaders,
+  AxiosResponse,
+  CancelToken
+} from 'axios';
 import {
   AddReceiptQRRequest,
   AddReceiptRequest,
@@ -11,10 +16,10 @@ import { SESSION_ID_HEADER } from './constants';
 export class ReceiptApi implements ReceiptApiInterface {
   constructor(
     private readonly axiosInstance: AxiosInstance,
-    private sessionId: string
+    private sessionId: string | undefined
   ) {}
 
-  setSessionId(value: string): void {
+  setSessionId(value: string | undefined): void {
     this.sessionId = value;
   }
 
@@ -23,7 +28,7 @@ export class ReceiptApi implements ReceiptApiInterface {
     cancelToken?: CancelToken
   ): Promise<AxiosResponse<ReceiptShort, AddReceiptRequest>> {
     return this.axiosInstance.post('v2/ticket', data, {
-      headers: { [SESSION_ID_HEADER]: this.sessionId },
+      headers: { ...this.getSessionHeader() },
       cancelToken
     });
   }
@@ -33,7 +38,7 @@ export class ReceiptApi implements ReceiptApiInterface {
     cancelToken?: CancelToken
   ): Promise<AxiosResponse<ReceiptShort, AddReceiptQRRequest>> {
     return this.axiosInstance.post('v2/ticket', data, {
-      headers: { [SESSION_ID_HEADER]: this.sessionId },
+      headers: { ...this.getSessionHeader() },
       cancelToken
     });
   }
@@ -43,7 +48,7 @@ export class ReceiptApi implements ReceiptApiInterface {
     cancelToken?: CancelToken
   ): Promise<AxiosResponse<ReceiptDetails, any>> {
     return this.axiosInstance.get(`v2/tickets/${encodeURIComponent(id)}`, {
-      headers: { [SESSION_ID_HEADER]: this.sessionId },
+      headers: { ...this.getSessionHeader() },
       cancelToken
     });
   }
@@ -52,38 +57,22 @@ export class ReceiptApi implements ReceiptApiInterface {
     cancelToken?: CancelToken
   ): Promise<AxiosResponse<ReceiptShort[], any>> {
     return this.axiosInstance.get('v2/tickets', {
-      headers: { [SESSION_ID_HEADER]: this.sessionId },
+      headers: { ...this.getSessionHeader() },
       cancelToken
     });
   }
 
   removeReceipt(id: string, cancelToken?: CancelToken): Promise<AxiosResponse> {
     return this.axiosInstance.delete(`v2/tickets/${encodeURIComponent(id)}`, {
-      headers: { [SESSION_ID_HEADER]: this.sessionId },
+      headers: { ...this.getSessionHeader() },
       cancelToken
     });
   }
 
-  validateReceipt(
-    date: string,
-    operationType: number,
-    sum: number,
-    fsId: string,
-    documentId: number,
-    fiscalSign: number,
-    cancelToken?: CancelToken
-  ): Promise<AxiosResponse> {
-    return this.axiosInstance.get('v2/check/ticket', {
-      params: {
-        date,
-        operationType,
-        sum,
-        fsId,
-        documentId,
-        fiscalSign
-      },
-      headers: { [SESSION_ID_HEADER]: this.sessionId },
-      cancelToken
-    });
+  private getSessionHeader(): AxiosRequestHeaders | undefined {
+    if (this.sessionId !== undefined) {
+      return { [SESSION_ID_HEADER]: this.sessionId };
+    }
+    return undefined;
   }
 }
