@@ -41,7 +41,7 @@ loginApi
 import axios from 'axios';
 import * as fns from 'fns-api';
 
-// Get sessionId from login response
+// Get session id from login response
 const sessionId = '<your session id>';
 // Your receipt data
 const fiscalData: fns.FiscalData = {
@@ -71,7 +71,7 @@ receiptApi
 import axios from 'axios';
 import * as fns from '..';
 
-// Get sessionId from login response
+// Get session id from login response
 const sessionId = '<your session id>';
 // QR-data string from the receipt
 const qr = '<your qr data scanned from the receipt>';
@@ -94,7 +94,7 @@ receiptApi
 import axios from 'axios';
 import * as fns from '..';
 
-// Get sessionId from login response
+// Get session id from login response
 const sessionId = '<your session id>';
 // Get receipt id after call add receipt api
 const receiptId = '<your receipt id>';
@@ -119,7 +119,7 @@ receiptApi
 import axios from 'axios';
 import * as fns from '..';
 
-// Get sessionId from login response
+// Get session id from login response
 const sessionId = '<your session id>';
 
 const axiosInstance = axios.create({
@@ -140,7 +140,7 @@ receiptApi
 import axios from 'axios';
 import * as fns from '..';
 
-// Get sessionId from login response
+// Get session id from login response
 const sessionId = '<your session id>';
 // Receipt id
 const receiptId = '<your receipt id>';
@@ -154,6 +154,29 @@ const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
 receiptApi
   .removeReceipt(receiptId)
   .then((response) => console.log(response.status))
+  .catch((e) => console.error(e));
+```
+
+### Refresh Tokens
+
+```js
+import axios from 'axios';
+import * as fns from '..';
+
+// Get refresh token from login response
+const refreshToken = '<your refresh token>';
+// Client secret
+const clientSecret = '<client secret>';
+
+const axiosInstance = axios.create({
+  baseURL: fns.BASE_URL,
+  headers: fns.defaultHeaders
+});
+const loginApi = new fns.LoginApi(axiosInstance);
+
+loginApi
+  .refreshTokens({ refresh_token: refreshToken, client_secret: clientSecret })
+  .then((response) => console.log(response.data))
   .catch((e) => console.error(e));
 ```
 
