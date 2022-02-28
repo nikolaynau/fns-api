@@ -14,7 +14,7 @@
 | \*  | state              | string | The state parameter is used to protect against XSRF in OAuth2 flow.                                           |
 | \*  | client_secret      | string | [Client secret](./terms.md#client-secret)                                                                     |
 
-## FLLoginRequest
+## LKFLLoginRequest
 
 | Req | Name          | Type   | Description                                                         |
 | --- | ------------- | ------ | ------------------------------------------------------------------- |

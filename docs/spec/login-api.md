@@ -66,7 +66,7 @@ Authorization is not required.
 
 | Req | Name           | Belong | Type                                             | Description   |
 | --- | -------------- | ------ | ------------------------------------------------ | ------------- |
-| \*  | FLLoginRequest | Body   | [FLLoginRequest](./data-model.md#FLLoginRequest) | Request data. |
+| \*  | LKFLLoginRequest | Body   | [LKFLLoginRequest](./data-model.md#LKFLLoginRequest) | Request data. |
 
 #### Successful Response (Code: `200 OK`)
 
