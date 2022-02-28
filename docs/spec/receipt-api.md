@@ -85,6 +85,7 @@ Authorization is required. More [here](./general-spec.md#authorization).
 | Code                        | Type   | Description                                   |
 | --------------------------- | ------ | --------------------------------------------- |
 | **400 Bad Request**         | string | Invalid request parameters.                   |
+| **404 Not Found**           | string | Receipt with this id not found.               |
 | **401 Unauthorized**        | string | Authorization required.                       |
 | **500 Server Error**        | string | The server was unable to process the request. |
 | **503 Service Unavailable** | string | Service is temporarily unavailable.           |

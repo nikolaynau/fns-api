@@ -219,18 +219,19 @@ Alias for [FiscalData](#fiscaldata) type.
 | &nbsp; | fiscalDocumentFormatVer | int                                  | Fiscal document number format version.                                              |
 | \*     | fiscalDocumentNumber    | long                                 | FD number (Fiscal Document) up to 10 digits. E.g. `54812`.                          |
 | \*     | fiscalSign              | long                                 | FP number (Fiscal Sign of the Document) up to 10 digits. E.g. `3522207165`.         |
-| &nbsp; | fnsSite                 | string                               | Value: `nalog.ru`                                                                   |
+| &nbsp; | fnsUrl                  | string                               | Value: `nalog.ru`                                                                   |
 | &nbsp; | internetSign            | int                                  |                                                                                     |
 | \*     | items                   | Array\<[ReceiptItem](#receiptitem)\> | Producs / services involved in the operation.                                       |
 | \*     | kktRegId                | string                               | Registration number of KKT.                                                         |
 | &nbsp; | machineNumber           | string                               |                                                                                     |
 | &nbsp; | messageFiscalSign       | long                                 |                                                                                     |
 | \*     | operationType           | int                                  | Operation type (sale, purchase, etc.). See [OperationType](#operationtype).         |
-| \*     | operator                | string                               | Data of the cashier who punched the receipt.                                        |
+| \*     | operator                | string                               | Name of the cashier who punched the receipt.                                        |
+| &nbsp; | operatorInn             | string                               | INN of the cashier who punched the receipt.                                         |
 | &nbsp; | paymentAgentType        | int                                  |                                                                                     |
 | &nbsp; | propertiesData          | string                               | User data.                                                                          |
 | &nbsp; | propertiesUser          | [UserProperty](#userproperty)        | User data.                                                                          |
-| \*     | receiptCode             | int                                  | Receipt code.                                                                       |
+| &nbsp; | receiptCode             | int                                  | Receipt code.                                                                       |
 | \*     | requestNumber           | int                                  | Request number.                                                                     |
 | \*     | shiftNumber             | int                                  | Shift number.                                                                       |
 | \*     | taxationType            | int                                  | Type of taxation system. See [TaxationType](#taxationtype).                         |
@@ -257,6 +258,7 @@ Alias for [FiscalData](#fiscaldata) type.
 | &nbsp; | nds20       | int    | VAT amount 20%.                                       |
 | &nbsp; | paymentType | int    | Payment type. More detailed information is not known. |
 | &nbsp; | providerInn | string | INN of the fiscal organization.                       |
+| &nbsp; | productType | int    | Product type.                                         |
 
 ## UserProperty
 

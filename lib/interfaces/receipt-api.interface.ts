@@ -53,17 +53,8 @@ export interface ReceiptShort {
   seller?: Seller;
 }
 
-export interface ReceiptDetails {
-  id: string;
-  status: number;
-  kind: string;
-  createdAt: string;
-  qr: string;
-  operation: Operation;
-  query: ReceiptQuery;
+export interface ReceiptDetails extends ReceiptShort {
   ticket?: Document;
-  organization?: Organization;
-  seller?: Seller;
 }
 
 export interface Document {
@@ -144,7 +135,7 @@ export interface Receipt {
   fiscalDocumentFormatVer?: number;
   fiscalDocumentNumber: number;
   fiscalSign: number;
-  fnsSite?: string;
+  fnsUrl?: string;
   internetSign?: number;
   items: ReceiptItem[];
   kktRegId: string;
@@ -152,10 +143,11 @@ export interface Receipt {
   messageFiscalSign?: number;
   operationType: OperationType;
   operator: string;
+  operatorInn?: string;
   paymentAgentType: number;
   propertiesData: string;
   propertiesUser?: UserProperty;
-  receiptCode: number;
+  receiptCode?: number;
   requestNumber: number;
   shiftNumber: number;
   taxationType: TaxationType;
@@ -180,6 +172,7 @@ export interface ReceiptItem {
   nds20?: number;
   paymentType?: number;
   providerInn?: string;
+  productType?: number;
 }
 
 export interface UserProperty {
