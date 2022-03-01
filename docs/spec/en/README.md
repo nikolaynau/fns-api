@@ -1,4 +1,4 @@
-# API Spec
+# FNS API Spec
 
 - [Terms](./terms.md)
 - [General Information](./general-spec.md)
