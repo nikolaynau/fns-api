@@ -105,7 +105,7 @@ const axiosInstance = axios.create({
 });
 const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
 
-// Periodically make requests, 
+// Periodically make requests,
 // until you get the ReceiptStatus.NPD_FOUND or ReceiptStatus.HAVE_COPY status.
 receiptApi
   .getReceipt(receiptId)
@@ -182,7 +182,7 @@ loginApi
 
 ## API Specification
 
-Read [API specification](./docs/spec/README.md) for full information.
+Read [API specification](./docs/spec/en/README.md) for full information.
 
 ## License
 
