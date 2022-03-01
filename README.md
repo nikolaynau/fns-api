@@ -182,7 +182,7 @@ loginApi
 
 ## API Specification
 
-Read [API specification](./docs/spec/en/README.md) for full information.
+Read [API specification](./docs/spec/en/README.md) for full information. Translations: [ru](./docs/spec/ru/README.md), [en](./docs/spec/en/README.md).
 
 ## License
 
