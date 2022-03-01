@@ -212,9 +212,9 @@ Alias for [FiscalData](#fiscaldata) type.
 | &nbsp; | prepaidSum              | long                                 | Prepayment sum, in minimum money units.                                             |
 | &nbsp; | provisionSum            | long                                 | Provision sum, in minimum money units.                                              |
 | &nbsp; | ndsNo                   | long                                 | Sum without VAT.                                                                    |
-| &nbsp; | nds10                   | int                                  | VAT amount 10%                                                                      |
-| &nbsp; | nds18                   | int                                  | VAT amount 18%                                                                      |
-| &nbsp; | nds20                   | int                                  | VAT amount 20%                                                                      |
+| &nbsp; | nds10                   | int                                  | VAT amount 10%.                                                                     |
+| &nbsp; | nds18                   | int                                  | VAT amount 18%.                                                                     |
+| &nbsp; | nds20                   | int                                  | VAT amount 20%.                                                                     |
 | \*     | fiscalDriveNumber       | string                               | FN number (Fiscal Number) 16-digit. E.g. `8710000100518392`.                        |
 | &nbsp; | fiscalDocumentFormatVer | int                                  | Fiscal document number format version.                                              |
 | \*     | fiscalDocumentNumber    | long                                 | FD number (Fiscal Document) up to 10 digits. E.g. `54812`.                          |
@@ -245,20 +245,20 @@ Alias for [FiscalData](#fiscaldata) type.
 
 ## ReceiptItem
 
-| Req    | Name        | Type   | Description                                           |
-| ------ | ----------- | ------ | ----------------------------------------------------- |
-| \*     | name        | string | Name of item in the receipt.                          |
-| \*     | quantity    | double | Quantity of item.                                     |
-| \*     | price       | long   | Price of item, in minimum money units.                |
-| \*     | sum         | long   | Sum of item, in minimum money units.                  |
-| &nbsp; | nds         | int    |                                                       |
-| &nbsp; | ndsNo       | long   | Sum without VAT.                                      |
-| &nbsp; | nds10       | int    | VAT amount 10%.                                       |
-| &nbsp; | nds18       | int    | VAT amount 18%.                                       |
-| &nbsp; | nds20       | int    | VAT amount 20%.                                       |
-| &nbsp; | paymentType | int    | Payment type. More detailed information is not known. |
-| &nbsp; | providerInn | string | INN of the fiscal organization.                       |
-| &nbsp; | productType | int    | Product type.                                         |
+| Req    | Name        | Type   | Description                            |
+| ------ | ----------- | ------ | -------------------------------------- |
+| \*     | name        | string | Name of item in the receipt.           |
+| \*     | quantity    | double | Quantity of item.                      |
+| \*     | price       | long   | Price of item, in minimum money units. |
+| \*     | sum         | long   | Sum of item, in minimum money units.   |
+| &nbsp; | nds         | int    |                                        |
+| &nbsp; | ndsNo       | long   | Sum without VAT.                       |
+| &nbsp; | nds10       | int    | VAT amount 10%.                        |
+| &nbsp; | nds18       | int    | VAT amount 18%.                        |
+| &nbsp; | nds20       | int    | VAT amount 20%.                        |
+| &nbsp; | paymentType | int    | Payment type.                          |
+| &nbsp; | providerInn | string | INN of the fiscal organization.        |
+| &nbsp; | productType | int    | Product type.                          |
 
 ## UserProperty
 
