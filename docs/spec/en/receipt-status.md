@@ -33,4 +33,4 @@ It includes:
 
 ## Other
 
-Any other status, that is not described below, can be considered as a fetch receipt error from internal system.
+Any other status, that is not described above, can be considered as a fetch receipt error from internal system.

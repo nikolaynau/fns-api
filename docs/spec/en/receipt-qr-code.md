@@ -6,9 +6,9 @@ After scanning the qr code from the receipt, you will receive the following info
 
 where:
 
-`t` - Date from receipt.  
-`s` - Total sum of the receipt.  
-`fn` - FN number (Fiscal Number) 16-digit. E.g. 8710000100518392.  
-`i` - FD number (Fiscal Document) up to 10 digits. E.g. 54812.  
-`fp` - FP number (Fiscal Sign of the Document) up to 10 digits. E.g. 3522207165.  
-`n` - Operation type (sale, purchase, etc.). See [OperationType](./data-model.md#OperationType).
+`t` - Date from receipt in ISO 8601 format. E.g. `20180518T220500`.  
+`s` - Total sum of the receipt. E.g. `975.88`.    
+`fn` - FN number (Fiscal Number) 16-digit. E.g. `8710000100518392`.   
+`i` - FD number (Fiscal Document) up to 10 digits. E.g. `54812`.    
+`fp` - FP number (Fiscal Sign of the Document) up to 10 digits. E.g. `3522207165`.    
+`n` - Operation type (sale, purchase, etc.). See [OperationType](./data-model.md#OperationType). E.g. `1`.    
