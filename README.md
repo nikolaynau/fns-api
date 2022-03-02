@@ -35,6 +35,7 @@ receiptApi
 - [Get receipt details](#get-receipt-details)
 - [Get receipt list](#get-receipt-list)
 - [Remove receipt](#remove-receipt)
+- [Refresh tokens](#refresh-tokens)
 
 ### Login in FNS
 
@@ -183,7 +184,7 @@ receiptApi
   .catch((e) => console.error(e));
 ```
 
-### Refresh Tokens
+### Refresh tokens
 
 ```js
 import axios from 'axios';
