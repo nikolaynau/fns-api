@@ -10,7 +10,33 @@ npm install fns-api axios
 
 ## Usage
 
-### Login
+```js
+// App.js
+import axios from 'axios';
+import * as fns from 'fns-api';
+
+const axiosInstance = axios.create({
+  baseURL: fns.BASE_URL,
+  headers: fns.defaultHeaders
+});
+const receiptApi = new fns.ReceiptApi(axiosInstance, '<your session id>');
+
+receiptApi
+  .addReceiptQR({ qr: '<your qr data scanned from the receipt>' })
+  .then((response) => console.log(response.data))
+  .catch((e) => console.error(e));
+```
+
+## Examples
+
+- [Login in FNS](#login-in-fns)
+- [Add receipt](#add-receipt)
+- [Add receipt by QR](#add-receipt-by-qr)
+- [Get receipt details](#get-receipt-details)
+- [Get receipt list](#get-receipt-list)
+- [Remove receipt](#remove-receipt)
+
+### Login in FNS
 
 ```js
 import axios from 'axios';
@@ -35,7 +61,7 @@ loginApi
   .catch((e) => console.error(e));
 ```
 
-### Add Receipt
+### Add receipt
 
 ```js
 import axios from 'axios';
@@ -65,7 +91,7 @@ receiptApi
   .catch((e) => console.error(e));
 ```
 
-### Add Receipt by QR
+### Add receipt by QR
 
 ```js
 import axios from 'axios';
@@ -88,7 +114,7 @@ receiptApi
   .catch((e) => console.error(e));
 ```
 
-### Get Receipt Details
+### Get receipt details
 
 ```js
 import axios from 'axios';
@@ -113,7 +139,7 @@ receiptApi
   .catch((e) => console.error(e));
 ```
 
-### Get Receipt List
+### Get receipt list
 
 ```js
 import axios from 'axios';
@@ -134,7 +160,7 @@ receiptApi
   .catch((e) => console.error(e));
 ```
 
-### Remove Receipt
+### Remove receipt
 
 ```js
 import axios from 'axios';
