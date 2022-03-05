@@ -29,7 +29,7 @@ receiptApi
 
 ## Example
 
-Create `LoginApi` instance to work with login methods
+Create `LoginApi` instance to work with login
 
 ```js
 import axios from 'axios';
