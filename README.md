@@ -27,42 +27,22 @@ receiptApi
   .catch((e) => console.error(e));
 ```
 
-## Examples
+## Example
 
-- [Login by LKFL](#login-by-lkfl)
-- [Add receipt](#add-receipt)
-- [Add receipt by QR](#add-receipt-by-qr)
-- [Get receipt details](#get-receipt-details)
-- [Get receipt list](#get-receipt-list)
-- [Remove receipt](#remove-receipt)
-- [Refresh tokens](#refresh-tokens)
-
-### Login by LKFL
+Create `LoginApi` instance to work with login methods
 
 ```js
 import axios from 'axios';
 import * as fns from 'fns-api';
-
-// Your INN from https://lkfl2.nalog.ru
-const inn = '<your inn>';
-// Your password from https://lkfl2.nalog.ru
-const password = '<your password>';
-// Client secret
-const clientSecret = '<client secret>';
 
 const axiosInstance = axios.create({
   baseURL: fns.BASE_URL,
   headers: fns.defaultHeaders
 });
 const loginApi = new fns.LoginApi(axiosInstance);
-
-loginApi
-  .loginLKFL({ inn, password, client_secret: clientSecret })
-  .then((response) => console.log(response.data))
-  .catch((e) => console.error(e));
 ```
 
-### Add receipt
+Create `ReceiptApi` instance to work with receipts
 
 ```js
 import axios from 'axios';
@@ -70,6 +50,35 @@ import * as fns from 'fns-api';
 
 // Get session id from login response
 const sessionId = '<your session id>';
+
+const axiosInstance = axios.create({
+  baseURL: fns.BASE_URL,
+  headers: fns.defaultHeaders
+});
+const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
+```
+
+Session id you will receive after logging in in any chosen way.
+
+Login with the same credentials as on the site https://lkfl2.nalog.ru
+
+```js
+// Your INN from https://lkfl2.nalog.ru
+const inn = '<your inn>';
+// Your password from https://lkfl2.nalog.ru
+const password = '<your password>';
+// Client secret
+const clientSecret = '<client secret>';
+
+loginApi
+  .loginLKFL({ inn, password, client_secret: clientSecret })
+  .then((response) => console.log(response.data))
+  .catch((e) => console.error(e));
+```
+
+To get information about a check, you must first add receipt
+
+```js
 // Your receipt data
 const fiscalData: fns.FiscalData = {
   date: '2021-06-14T14:32',
@@ -80,34 +89,17 @@ const fiscalData: fns.FiscalData = {
   fiscalSign: '7634185632'
 };
 
-const axiosInstance = axios.create({
-  baseURL: fns.BASE_URL,
-  headers: fns.defaultHeaders
-});
-const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
-
 receiptApi
   .addReceipt({ fiscalData, sendToEmail: false })
   .then((response) => console.log(response.data))
   .catch((e) => console.error(e));
 ```
 
-### Add receipt by QR
+A receipt can be added according to the data from the [QR-code](./docs/spec/en/receipt-qr-code.md)
 
 ```js
-import axios from 'axios';
-import * as fns from '..';
-
-// Get session id from login response
-const sessionId = '<your session id>';
 // QR-data string from the receipt
 const qr = '<your qr data scanned from the receipt>';
-
-const axiosInstance = axios.create({
-  baseURL: fns.BASE_URL,
-  headers: fns.defaultHeaders
-});
-const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
 
 receiptApi
   .addReceiptQR({ qr })
@@ -115,22 +107,11 @@ receiptApi
   .catch((e) => console.error(e));
 ```
 
-### Get receipt details
+After adding, we can get detailed information about the receipt
 
 ```js
-import axios from 'axios';
-import * as fns from '..';
-
-// Get session id from login response
-const sessionId = '<your session id>';
 // Get receipt id after call add receipt api
 const receiptId = '<your receipt id>';
-
-const axiosInstance = axios.create({
-  baseURL: fns.BASE_URL,
-  headers: fns.defaultHeaders
-});
-const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
 
 // Periodically make requests,
 // until you get the ReceiptStatus.NPD_FOUND or ReceiptStatus.HAVE_COPY status.
@@ -140,43 +121,22 @@ receiptApi
   .catch((e) => console.error(e));
 ```
 
-### Get receipt list
+More information about [receipt status](./docs/spec/en/receipt-status.md).
+
+Get a list of all added receipts
 
 ```js
-import axios from 'axios';
-import * as fns from '..';
-
-// Get session id from login response
-const sessionId = '<your session id>';
-
-const axiosInstance = axios.create({
-  baseURL: fns.BASE_URL,
-  headers: fns.defaultHeaders
-});
-const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
-
 receiptApi
   .getReceipts()
   .then((response) => console.log(response.data))
   .catch((e) => console.error(e));
 ```
 
-### Remove receipt
+Remove a receipt from the list of added
 
 ```js
-import axios from 'axios';
-import * as fns from '..';
-
-// Get session id from login response
-const sessionId = '<your session id>';
 // Receipt id
 const receiptId = '<your receipt id>';
-
-const axiosInstance = axios.create({
-  baseURL: fns.BASE_URL,
-  headers: fns.defaultHeaders
-});
-const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
 
 receiptApi
   .removeReceipt(receiptId)
@@ -184,22 +144,13 @@ receiptApi
   .catch((e) => console.error(e));
 ```
 
-### Refresh tokens
+Refresh session id and refresh token
 
 ```js
-import axios from 'axios';
-import * as fns from '..';
-
 // Get refresh token from login response
 const refreshToken = '<your refresh token>';
 // Client secret
 const clientSecret = '<client secret>';
-
-const axiosInstance = axios.create({
-  baseURL: fns.BASE_URL,
-  headers: fns.defaultHeaders
-});
-const loginApi = new fns.LoginApi(axiosInstance);
 
 loginApi
   .refreshTokens({ refresh_token: refreshToken, client_secret: clientSecret })
