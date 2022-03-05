@@ -58,7 +58,7 @@ const axiosInstance = axios.create({
 const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
 ```
 
-Session id you will receive after logging in in any chosen way.
+Session id you will receive after logging in any chosen way.
 
 Login with the same credentials as on the site https://lkfl2.nalog.ru
 
