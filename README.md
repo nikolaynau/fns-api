@@ -76,7 +76,7 @@ loginApi
   .catch((e) => console.error(e));
 ```
 
-To get information about a check, you must first add receipt
+To get information about a receipt, you must first add it
 
 ```js
 // Your receipt data
