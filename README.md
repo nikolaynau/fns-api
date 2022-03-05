@@ -29,7 +29,7 @@ receiptApi
 
 ## Examples
 
-- [Login in FNS](#login-in-fns)
+- [Login by LKFL](#login-by-lkfl)
 - [Add receipt](#add-receipt)
 - [Add receipt by QR](#add-receipt-by-qr)
 - [Get receipt details](#get-receipt-details)
@@ -37,7 +37,7 @@ receiptApi
 - [Remove receipt](#remove-receipt)
 - [Refresh tokens](#refresh-tokens)
 
-### Login in FNS
+### Login by LKFL
 
 ```js
 import axios from 'axios';
