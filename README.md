@@ -60,7 +60,7 @@ const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
 
 Session id you will receive after logging in any chosen way.
 
-Login with the same credentials as on the site https://lkfl2.nalog.ru
+Login with the same credentials as on the site [lkfl2.nalog.ru](https://lkfl2.nalog.ru)
 
 ```js
 // Your INN from https://lkfl2.nalog.ru
