@@ -1,4 +1,4 @@
-# fns-api
+# fns-api [![npm version](https://img.shields.io/npm/v/fns-api.svg)](https://npmjs.org/package/fns-api) [![npm version](https://img.shields.io/npm/dm/fns-api.svg)](https://npmjs.org/package/fns-api)
 
 > Methods of working with FNS API.
 
