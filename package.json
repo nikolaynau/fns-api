@@ -19,12 +19,15 @@
     "lint": "eslint \"{lib,tests}/**/*.ts\" --fix",
     "test:e2e": "jest --config ./tests/jest-e2e.json",
     "postversion": "npm run push",
-    "push": "git push origin master --tags"
+    "push": "git push origin master --tags",
+    "prepare": "husky install"
   },
   "peerDependencies": {
     "axios": "^0.26.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-angular": "^16.2.4",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
@@ -33,11 +36,16 @@
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
     "jest": "^27.5.1",
+    "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.1.4",
     "typescript": "^4.6.3"
+  },
+  "lint-staged": {
+    "*.ts": "prettier --write"
   },
   "repository": {
     "type": "git",
