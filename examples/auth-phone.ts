@@ -17,13 +17,13 @@ const loginApi = new fns.LoginApi(axiosInstance);
 // Send verification code by sms
 loginApi
   .loginByPhone({ phone, captcha, os: 'android', client_secret: clientSecret })
-  .then((response) => console.log(response.data))
-  .catch((e) => console.error(e));
+  .then(response => console.log(response.data))
+  .catch(e => console.error(e));
 
 const code = '<Your verification code from sms>';
 
 // Get tokens
 loginApi
   .verifyPhone({ phone, code, client_secret: clientSecret })
-  .then((response) => console.log(response.data))
-  .catch((e) => console.error(e));
+  .then(response => console.log(response.data))
+  .catch(e => console.error(e));

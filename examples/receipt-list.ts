@@ -11,5 +11,5 @@ const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
 
 receiptApi
   .getReceipts()
-  .then((response) => console.log(response.data))
-  .catch((e) => console.error(e));
+  .then(response => console.log(response.data))
+  .catch(e => console.error(e));

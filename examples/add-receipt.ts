@@ -20,5 +20,5 @@ const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
 
 receiptApi
   .addReceipt({ fiscalData, sendToEmail: false })
-  .then((response) => console.log(response.data))
-  .catch((e) => console.error(e));
+  .then(response => console.log(response.data))
+  .catch(e => console.error(e));

@@ -12,5 +12,5 @@ const receiptApi = new fns.ReceiptApi(axiosInstance, sessionId);
 
 receiptApi
   .removeReceipt(receiptToRemove)
-  .then((response) => console.log(response.status))
-  .catch((e) => console.error(e));
+  .then(response => console.log(response.status))
+  .catch(e => console.error(e));

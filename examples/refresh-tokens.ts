@@ -12,5 +12,5 @@ const loginApi = new fns.LoginApi(axiosInstance);
 
 loginApi
   .refreshTokens({ refresh_token: refreshToken, client_secret: clientSecret })
-  .then((response) => console.log(response.data))
-  .catch((e) => console.error(e));
+  .then(response => console.log(response.data))
+  .catch(e => console.error(e));
