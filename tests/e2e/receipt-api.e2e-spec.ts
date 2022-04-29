@@ -86,7 +86,7 @@ describe('ReceiptApi (e2e)', () => {
     expect(response.data.length > 0).toBe(true);
 
     const receipt = response.data.find(
-      (r) => r.id === addedReceiptId
+      r => r.id === addedReceiptId
     ) as ReceiptShort;
     expectIsDefined(receipt);
 
@@ -104,7 +104,7 @@ describe('ReceiptApi (e2e)', () => {
     const initReceiptsLength = initResponse.data.length;
     expect(initReceiptsLength > 0).toBe(true);
     const receiptToRemove = initResponse.data.find(
-      (r) => r.id === addedReceiptId
+      r => r.id === addedReceiptId
     ) as ReceiptShort;
     expectIsDefined(receiptToRemove);
 
@@ -117,7 +117,7 @@ describe('ReceiptApi (e2e)', () => {
     expect(actualReceiptsLength < initReceiptsLength).toBe(true);
     expect(Array.isArray(actualResponse.data)).toBe(true);
     expect(
-      actualResponse.data.find((r) => r.id === receiptToRemove.id)
+      actualResponse.data.find(r => r.id === receiptToRemove.id)
     ).toBeUndefined();
   });
 
