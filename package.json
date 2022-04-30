@@ -1,6 +1,6 @@
 {
   "name": "fns-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Methods of working with FNS API",
   "main": "index.js",
   "types": "index.d.ts",
