@@ -1,9 +1,4 @@
-import type {
-  AxiosInstance,
-  AxiosRequestHeaders,
-  AxiosResponse,
-  CancelToken
-} from 'axios';
+import type { AxiosInstance, AxiosResponse, CancelToken } from 'axios';
 import {
   AddReceiptQRRequest,
   AddReceiptRequest,
@@ -69,7 +64,9 @@ export class ReceiptApi implements ReceiptApiInterface {
     });
   }
 
-  private getSessionHeader(): AxiosRequestHeaders | undefined {
+  private getSessionHeader():
+    | Record<string, string | number | boolean>
+    | undefined {
     if (this.sessionId !== undefined) {
       return { [SESSION_ID_HEADER]: this.sessionId };
     }
